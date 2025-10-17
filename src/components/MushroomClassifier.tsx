@@ -27,10 +27,10 @@ export const MushroomClassifier = () => {
         description: "Downloading classification model (first time only)...",
       });
 
-      // Create the classifier pipeline (auto-detect best available device)
+      // Create the classifier pipeline with Transformers.js compatible model
       const classifier = await pipeline(
         "image-classification",
-        "google/vit-base-patch16-224"
+        "Xenova/vit-base-patch16-224"
       );
 
       setIsModelLoading(false);
