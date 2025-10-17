@@ -27,11 +27,10 @@ export const MushroomClassifier = () => {
         description: "Downloading classification model (first time only)...",
       });
 
-      // Create the classifier pipeline
+      // Create the classifier pipeline (auto-detect best available device)
       const classifier = await pipeline(
         "image-classification",
-        "google/vit-base-patch16-224",
-        { device: "webgpu" }
+        "google/vit-base-patch16-224"
       );
 
       setIsModelLoading(false);
